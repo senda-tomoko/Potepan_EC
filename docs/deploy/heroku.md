@@ -132,6 +132,16 @@ YYYY-MM-DD HH:MM:SS potepanec
 
 最後のコマンドでバケットの名前が表示されれば設定は完了です。
 
+#### ＜コマンドが実行できない場合＞
+
+シェルをzshに設定している場合、3つ目のコマンド（`aws s3api put-bucket-ownership-controls ... Rules=[{ObjectOwnership=ObjectWriter}]`）を実行した際に`zsh: no matches found`というエラーが出力されることがあります。
+
+この場合は、`Rules=`以降のコマンドをダブルクォーテーションで括っていただいた上で再度実行してください。
+
+```sh
+$ aws s3api put-bucket-ownership-controls --bucket potepanec --ownership-controls Rules="[{ObjectOwnership=ObjectWriter}]"
+```
+
 ### Active Storageの設定
 
 最後にpotepanecアプリケーションとS3を連携させ、商品画像がS3に保存されるようにしましょう。
