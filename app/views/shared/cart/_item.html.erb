@@ -1,0 +1,32 @@
+<li class="ItemInCart">
+  <%= image_tag("home/category/cloth.jpg", class: "ItemInCart__image", alt: "服") %>
+
+  <div class="ItemInCart__details">
+    <p class="ItemInCart__name">ヒートテックウォームウォームパデットリブブルゾン</p>
+
+    <span>商品番号：00000</span>
+    <span>カラー：BLACK</span>
+    <span>サイズ：M</span>
+    <span>¥ 5,999</span>
+
+    <a href="#" class="ItemInCart__delete-link">削除</a>
+  </div>
+
+  <div class="SubTotalForItem">
+    <label class="SubTotalForItem__label" for="item-count">数量</label>
+
+    <div class="SubTotalForItem__select">
+      <select name="item-count" id="item-count">
+        <% (1..10).each do |i| %>
+          <option value="<%= i %>"><%= i %></option>
+        <% end %>
+      </select>
+    </div>
+
+    <p class="SubTotalForItem__price">
+      <span>小計</span>
+
+      <span>¥ 99,999</span>
+    </p>
+  </div>
+</li>

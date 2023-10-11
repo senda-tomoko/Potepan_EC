@@ -1,0 +1,56 @@
+@import "../_break-points.scss";
+@import "../_variables.scss";
+
+.OrderDetailsContainer {
+  width: 459px;
+
+  @include sm-device-or-less {
+    width: 100%;
+  }
+}
+
+.OrderDetails {
+  background-color: $background-gray;
+  color: $text-black;
+  margin-bottom: 32px;
+  padding: 32px;
+
+  &__title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 39px;
+    margin-bottom: 32px;
+  }
+
+  &__total {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+  }
+
+  p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  span {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  hr {
+    border-color: $border-gray;
+    margin: 32px 0;
+  }
+}
+
+.OrderButton {
+  background-color: #004197;
+  border: none;
+  color: $basic-white;
+  font-size: 20px;
+  height: 60px;
+  line-height: 60px;
+  width: 100%;
+}

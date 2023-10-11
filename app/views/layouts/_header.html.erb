@@ -1,0 +1,51 @@
+<div class="Header">
+  <nav class="NavigationBar" role="navigation">
+    <div class="Container HeaderContainer">
+      <div class="NavigationBar__menus">
+        <%= link_to root_path do %>
+          <%= image_tag("common/service-logo.svg", class: "ServiceLogo") %>
+        <% end %>
+
+        <ul class="NavigationMenuList">
+          <li class="NavigationMenuList__item">服</li>
+          <li class="NavigationMenuList__item">帽子</li>
+          <li class="NavigationMenuList__item">バッグ</li>
+          <li class="NavigationMenuList__item">食器</li>
+        </ul>
+      </div>
+
+      <div class="NavigationBar__icons">
+        <ul class="NavigationIconList">
+          <li class="NavigationIconList__item NavigationIconList__item--search">
+            <a
+              href="javascript:void(0)"
+              class="NavigationIconWrapper dropdown-toggle"
+              data-toggle="dropdown"
+            >
+              <%= image_tag("icons/black-color-search.svg", class: "NavigationIconWrapper__icon NavigationIconWrapper__icon--closed") %>
+              <span class="NavigationIconWrapper__label">見つける</span>
+            </a>
+
+            <div class="NavigationSearchForm">
+              <input
+                class="NavigationSearchForm__input dropdown-menu"
+                placeholder="お探しですか？"
+              >
+
+              <div class="NavigationSearchForm__icon-wrapper">
+                <%= image_tag("icons/white-color-search.svg", class: "NavigationIconWrapper__icon NavigationSearchForm__icon") %>
+              </div>
+            </div>
+          </li>
+
+          <li class="NavigationIconList__item">
+            <%= link_to cart_index_path, class: "NavigationIconWrapper" do %>
+              <%= image_tag("icons/cart.svg", class: "NavigationIconWrapper__icon") %>
+              <span class="NavigationIconWrapper__label">カート</span>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

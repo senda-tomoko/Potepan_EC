@@ -1,0 +1,41 @@
+@import "../_break-points.scss";
+@import "../_variables.scss";
+
+.CartContainer {
+  margin-bottom: 200px !important;
+
+  @include sm-device-or-less {
+    margin-bottom: 180px !important;
+  }
+
+  @include xs-device-or-less {
+    margin-bottom: 100px !important;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 39px;
+    margin-bottom: 32px;
+
+    @include xs-device-or-less {
+      font-size: 25px;
+      line-height: 32px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.CartWrapper {
+  display: flex;
+  justify-content: space-between;
+
+  @include sm-device-or-less {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  @include xs-device-or-less {
+    gap: 44px;
+  }
+}

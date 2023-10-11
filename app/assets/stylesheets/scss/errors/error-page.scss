@@ -1,0 +1,60 @@
+@import "../_break-points.scss";
+@import "../_variables.scss";
+
+.Error {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 190px 0 180px;
+
+  @include xs-device-or-less {
+    margin: 110px 0 100px;
+  }
+
+  &__image {
+    margin-bottom: 24px;
+
+    @include sm-device {
+      width: 254px;
+    }
+
+    @include xs-device-or-less {
+      width: 156px;
+    }
+  }
+
+  &__title {
+    font-family: $font-Lato;
+    font-weight: 900;
+    font-size: 100px;
+    line-height: 104px;
+    margin-bottom: 8px;
+
+    @include sm-device {
+      font-size: 67px;
+      line-height: 74px;
+    }
+
+    @include xs-device-or-less {
+      font-size: 51px;
+      line-height: 74px;
+    }
+  }
+
+  &__message {
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 24px;
+  }
+
+  &__link-button {
+    background-color: #004197;
+    color: $basic-white;
+    display: block;
+    font-size: 14px;
+    line-height: 49px;
+    height: 49px;
+    text-align: center;
+    width: 132px;
+  }
+}

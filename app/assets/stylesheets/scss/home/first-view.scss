@@ -1,0 +1,55 @@
+@import "../_break-points.scss";
+@import "../_variables.scss";
+
+.FirstView {
+  background-image: image-url("home/first-view-pc.jpg");
+  background-position: center;
+  height: 700px;
+  margin-bottom: 180px;
+
+  @include sm-device-or-less {
+    margin-bottom: 100px;
+  }
+
+  @include xs-device-or-less {
+    background-image: image-url("home/first-view-sp.jpg");
+    background-size: cover;
+    height: 388px;
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    font-family: $font-Lato;
+    font-size: 70px;
+    font-weight: 700;
+    letter-spacing: 0.035em;
+    line-height: 140%;
+
+    @include md-device-or-less {
+      font-size: 64px;
+    }
+
+    @include xs-device-or-less {
+      font-size: 32px;
+    }
+  }
+
+  &__description {
+    font-family: $font-Lato;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.035em;
+    line-height: 140%;
+
+    @include xs-device-or-less {
+      font-size: 14px;
+    }
+  }
+}
+
+.FirstViewContainer {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
