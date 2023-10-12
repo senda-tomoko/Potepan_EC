@@ -1,0 +1,55 @@
+<section class="Category">
+  <div class="Container">
+    <h2 class="Category__title">CATEGORY</h2>
+
+    <ul class="CategoryList">
+      <li class="CategoryItem">
+        <div class="CategoryItem__image-wrapper">
+          <%= image_tag("home/category/cloth.jpg", alt: "服カテゴリー") %>
+
+          <div class="CategoryItem__masking">
+            <%= link_to "VIEW", root_path, class: "CategoryItem__button" %>
+          </div>
+        </div>
+
+        <h3 class="CategoryItem__name">服</h3>
+      </li>
+
+      <li class="CategoryItem">
+        <div class="CategoryItem__image-wrapper">
+          <%= image_tag("home/category/cap.jpg", alt: "帽子カテゴリー") %>
+
+          <div class="CategoryItem__masking">
+            <%= link_to "VIEW", root_path, class: "CategoryItem__button" %>
+          </div>
+        </div>
+
+        <h3 class="CategoryItem__name">帽子</h3>
+      </li>
+
+      <li class="CategoryItem">
+        <div class="CategoryItem__image-wrapper">
+          <%= image_tag("home/category/bag.jpg", alt: "バッグカテゴリー") %>
+
+          <div class="CategoryItem__masking">
+            <%= link_to "VIEW", root_path, class: "CategoryItem__button" %>
+          </div>
+        </div>
+
+        <h3 class="CategoryItem__name">バッグ</h3>
+      </li>
+
+      <li class="CategoryItem">
+        <div class="CategoryItem__image-wrapper">
+          <%= image_tag("home/category/tableware.jpg", alt: "食器カテゴリー") %>
+
+          <div class="CategoryItem__masking">
+            <%= link_to "VIEW", root_path, class: "CategoryItem__button" %>
+          </div>
+        </div>
+
+        <h3 class="CategoryItem__name">食器</h3>
+      </li>
+    </ul>
+  </div>
+</section>

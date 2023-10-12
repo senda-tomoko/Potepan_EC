@@ -1,0 +1,26 @@
+@import "./_break-points.scss";
+
+.Container {
+  margin: 0 auto;
+  max-width: 1440px;
+
+  @include xl-device {
+    width: 1440px;
+  }
+
+  @include lg-device {
+    width: calc(100% - 48px * 2);
+  }
+
+  @include md-device {
+    width: calc(100% - 32px * 2);
+  }
+
+  @include sm-device {
+    width: calc(100% - 32px * 2);
+  }
+
+  @include xs-device-or-less {
+    width: calc(100% - 16px * 2);
+  }
+}

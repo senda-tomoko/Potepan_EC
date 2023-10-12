@@ -1,0 +1,54 @@
+@import "./_break-points.scss";
+@import "./_variables.scss";
+
+.Footer {
+  background-color: $background-gray;
+  display: flex;
+  height: 465px;
+
+  @include xs-device-or-less {
+    height: 378px;
+  }
+
+  &__container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    @include xs-device-or-less {
+      align-items: baseline;
+      flex-direction: column;
+      justify-content: center;
+      gap: 60px;
+    }
+  }
+}
+
+.Copyright {
+  &__logo {
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    font-family: $font-Lato;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    margin-bottom: 0;
+  }
+}
+
+.Sns {
+  &__title {
+    font-family: $font-Lato;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+  }
+
+  &__list {
+    align-items: center;
+    display: flex;
+    gap: 24px;
+  }
+}
