@@ -13,13 +13,30 @@ CircleCIとの連携後、以下のようなフローで最終課題を提出す
 
 まずは、GitHubとCircleCIを連携させていきましょう。
 
-[サインアップページ](https://circleci.com/signup/)にアクセスし、`Sign up With Github`をクリックしてください。
+[サインアップページ](https://circleci.com/signup/)にアクセスし、`Sign up`をクリックしてください。
 
-![サインアップページ](../images/CI/01_signup.png)
+![サインアップページ](https://res.cloudinary.com/he3zvdcui/image/upload/v1697594545/CircleCi/01_siginup_nugbto.png)
 
-`Select an organization`では、`potepancamp`を選択してください。
+フォーム画面に遷移しますので、任意のメールアドレスとパスワードを設定してください。
+（※Githubで使用しているものと同一のメールアドレスをお勧めします。）
 
-![組織を選択する](../images/CI/02_select-organization.png)
+![サインアップフォーム](https://res.cloudinary.com/he3zvdcui/image/upload/v1697594545/CircleCi/02_siginup_form_t99xcg.png)
+
+無事登録できれば、続いては簡単なアンケートページに遷移しますので、それぞれ以下の通りご回答ください。
+
+![アンケート](https://res.cloudinary.com/he3zvdcui/image/upload/v1697594545/CircleCi/03_welcome_gqvz4o.png)
+
+`Let's Go`ボタンをクリックすると、リポジトリサービスとの連携画面に遷移しますので、Githubの`Connect`ボタンをクリックしてください。
+
+![Githubとの連携](https://res.cloudinary.com/he3zvdcui/image/upload/v1697594545/CircleCi/04_connect_to_code_icecd3.png)
+
+しばらくするとCircleCIの認証画面に遷移しますので、`Authorize circleci`ボタンをクリックしてください。
+
+![CircleCIの認証](https://res.cloudinary.com/he3zvdcui/image/upload/v1697594544/CircleCi/05_authorize_circleci_skg9ks.png)
+
+認証が完了すると以下のようなモーダルが表示されますので、`potepancamp`を選択してください。
+
+![組織を選択する](https://res.cloudinary.com/he3zvdcui/image/upload/v1697594544/CircleCi/06_select_an_organization_gbdjvx.png)
 
 サインアップ後、画面左上のドロップダウンメニューをクリックしてください。
 
