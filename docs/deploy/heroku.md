@@ -315,9 +315,18 @@ https://(アプリケーション名).herokuapp.com/ deployed to Heroku
 URLはHerokuによって自動的に生成されます。このURLがあなたのアプリケーションのURLとなります。
 試しにブラウザでアクセスしてみましょう。
 
+#### 2023年10月12日以降に最終課題に入られた方はこちら
+
+2023年10月12日以降に最終課題に入られた方は、以下のような画面が表示されていればデプロイは完了ですので、「データベースの作成」セクションまで進んでください。
+
+![TOPページ](https://res.cloudinary.com/he3zvdcui/image/upload/v1696491413/Curriculums/final-task-2/first-view_cywe9c.png)
+
+#### 2023年10月11日以前に最終課題に入られた方はこちら
+
+2023年10月11日以前に最終課題に入られた方は、以下のようなエラー画面が表示されていると思います。
+
 ![heroku 500](../images/deploy/heroku_500.png)
 
-おっと、何やらエラー画面が表示されています。
 なぜエラーになっているのかを確認してみましょう。
 
 ```sh
@@ -327,9 +336,7 @@ FATAL -- : [a5c760b6-7ccb-4009-9b26-b66de590879c] Mysql2::Error::ConnectionError
 ...
 ```
 
-どうやらデータベース(MySQL)に接続できていないようです。
-
-これはHeroku上でRailsがアクセスするデータベースの情報が正しく設定されていないことが原因です。
+これは、データベース（MySQL）に接続できていないことが原因で発生しているエラーです。次の「データベースの作成」セクションでエラーを解消していきましょう。
 
 ## データベースの作成
 
@@ -386,9 +393,19 @@ $ git push heroku testbranch:master
 
 デプロイが完了したら、もう一度URLにアクセスしてみましょう。
 
+#### 2023年10月12日以降に最終課題に入られた方はこちら
+
+2023年10月12日以降に最終課題に入られた方は、変わらず以下のような画面が表示されていると思います。こちらで特に問題はありませんので、「データベースの設定」セクションまで進んでください。
+
+![TOPページ](https://res.cloudinary.com/he3zvdcui/image/upload/v1696491413/Curriculums/final-task-2/first-view_cywe9c.png)
+
+#### 2023年10月11日以前に最終課題に入られた方はこちら
+
+2023年10月11日以前に最終課題に入られた方は、依然として同じエラー画面が表示されていると思います。
+
 ![heroku 500](../images/deploy/heroku_500.png)
 
-うーん、また同じエラー画面が表示されてしまいました。ログを見てみましょう。
+なぜエラーになっているのかを確認してみましょう。
 
 ```sh
 $ heroku logs --source=app --tail
@@ -397,51 +414,50 @@ FATAL -- : [dc87c41d-991b-4104-832d-5be8179f7150] ActiveRecord::StatementInvalid
 ...
 ```
 
-おっ、今度はエラーメッセージが変わりましたね。`spree_stores`というテーブルが存在していないようです。
+先ほどとはエラーメッセージが変わり、`spree_stores`というテーブルが存在していないようです。
 
-これはデータベースには正常に接続できているものの、Solidusが必要とするテーブルが作成されていないことを意味します。
+これはデータベースには正常に接続できているものの、Solidusが必要とするテーブルが作成されていないことを意味します。次の「データベースの設定」セクションでエラーを解消していきましょう。
 
 ## データベースの設定
 
-Solidusが必要とするテーブル、および初期データを作成していきましょう。
+ここでは、Solidusが必要とするテーブル、および初期データを作成していきましょう。
 
-まずはテーブルの作成です。
+まずはテーブルの作成です。ターミナルで以下のコマンドを実行してください（※以降のコマンドも同様にターミナルで実行してください）。
+
 ```sh
 $ heroku run bin/rails db:migrate
 ```
+
 `heroku run`は与えられた任意のコマンドをHeroku上で実行するコマンドです。
 ここでは `bin/rails db:migrate`を実行し、必要なテーブルを作成しています。
 
-また、下記コマンドも実行もしてSample Storeのテーブルを作っておきましょう。
-これを実行しないと商品をカートに入れる実装をした時にエラーカート系のテーブルがなくエラーが起こります。
+また、下記のコマンドも実行して`Sample Store`のテーブルを作っておきましょう。
+
 ```sh
 $ heroku run bin/rails runner 'Spree::Store.create!(name: "Sample Store", code: "sample-store", url: "example.com", mail_from_address: "store@example.com")'
 ```
 
-これで必要なテーブルは作成できたはずです。アプリケーションのURLにアクセスしてみましょう。
+これで必要なテーブルは作成できたはずです。続いて、Solidusが用意しているサンプルデータをテーブルに格納していきましょう。
 
-![Solidus initial view](../images/deploy/solidus_initial_view.png)
-
-見事、正常な画面が表示されましたね! 🎉
-
-しかし、まだ問題があります。商品のデータが存在しません。
-
-幸運にもSolidusではサンプルデータを作成するための方法を用意してくれています。
-以下のコマンドを実行して、サンプルデータを作成しましょう。
+以下のコマンドを実行してください。
 
 ```sh
 $ heroku run bin/rails runner "['products', 'taxons', 'option_values', 'product_option_types', 'product_properties', 'variants', 'assets'].each { |table| Spree::Sample.load_sample(table) }"
 ```
 
-実行が完了したらアプケーションのURLにアクセスしてみましょう。
+コマンドの実行が完了したら、アプリケーションのURLにアクセスしてみましょう。
+
+### 2023年10月12日以降に最終課題に入られた方はこちら
+
+2023年10月12日以降に最終課題に入られた方は、変わらず以下のような画面が表示されていると思います。こちらでHeroku上での設定は完了です。お疲れ様でした！
+
+![TOPページ](https://res.cloudinary.com/he3zvdcui/image/upload/v1696491413/Curriculums/final-task-2/first-view_cywe9c.png)
+
+### 2023年10月11日以前に最終課題に入られた方はこちら
+
+2023年10月11日以前に最終課題に入られた方は、無事以下のようなページが表示されていると思います。こちらでHeroku上での設定は完了です。お疲れ様でした！
 
 ![Solidus initial view](../images/deploy/solidus_images_displayed.png)
-
-以上でおしまいです! 商品データが表示されましたか?
-
-念の為、課題で実装したページでも画像が表示されていることを確認しておきましょう。
-
-![Solidus initial view](../images/deploy/images_on_custom_page.png)
 
 ### 補足
 
