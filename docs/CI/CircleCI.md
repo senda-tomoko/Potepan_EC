@@ -17,6 +17,10 @@ CircleCIとの連携後、以下のようなフローで最終課題を提出す
 
 ![サインアップページ](https://res.cloudinary.com/he3zvdcui/image/upload/v1697594545/CircleCi/01_siginup_nugbto.png)
 
+以下のような画面に遷移しますので、「No, I'm setting up CircleCI for my team」の方を選択してください。
+
+![サインアップページ](https://res.cloudinary.com/he3zvdcui/image/upload/v1701745121/CircleCi/02_siginup_form_rcex5o.png)
+
 フォーム画面に遷移しますので、任意のメールアドレスとパスワードを設定してください。
 （※Githubで使用しているものと同一のメールアドレスをお勧めします。）
 
@@ -24,19 +28,28 @@ CircleCIとの連携後、以下のようなフローで最終課題を提出す
 
 無事登録できれば、続いては簡単なアンケートページに遷移しますので、それぞれ以下の通りご回答ください。
 
-![アンケート](https://res.cloudinary.com/he3zvdcui/image/upload/v1697594545/CircleCi/03_welcome_gqvz4o.png)
+![アンケート](https://res.cloudinary.com/he3zvdcui/image/upload/v1701745233/CircleCi/03_welcome_eak1n6.png)
 
-`Let's Go`ボタンをクリックすると、リポジトリサービスとの連携画面に遷移しますので、Githubの`Connect`ボタンをクリックしてください。
+`Let's Go`ボタンをクリックすると、リポジトリサービスとの連携画面に遷移します。
+ここでは特に手続きは行いませんので、[アカウント設定ページ](https://app.circleci.com/settings/user/account)にアクセスしてください。
 
-![Githubとの連携](https://res.cloudinary.com/he3zvdcui/image/upload/v1697594545/CircleCi/04_connect_to_code_icecd3.png)
+以下のような画面が表示されると思います。
 
-しばらくするとCircleCIの認証画面に遷移しますので、`Authorize circleci`ボタンをクリックしてください。
+![アカウント設定](https://res.cloudinary.com/he3zvdcui/image/upload/v1701745617/CircleCi/04_user_setting_jc1nwy.png)
+
+「Bitbucket」の上下に「Github」の項目が表示されていれば、そのセクションの「Connect」をクリックしてください。<br>
+「Github」の項目が表示されていなければ、「Refresh permissions」ボタンをクリックした後、ページ下部のリンク（「Received instructions ... Click to be redirected」）をクリックしてください。<br>
+「Confirm OAuth App Authorization」というモーダルが表示されますので、「Authorize with OAuth」ボタンをクリックしてください。
+
+![OAuth認証](https://res.cloudinary.com/he3zvdcui/image/upload/v1701746633/CircleCi/05_authorize_with_oauth_bumdpi.png)
+
+しばらくすると以下のようなCircleCIの認証画面に遷移しますので、`Authorize circleci`ボタンをクリックしてください。
 
 ![CircleCIの認証](https://res.cloudinary.com/he3zvdcui/image/upload/v1697594544/CircleCi/05_authorize_circleci_skg9ks.png)
 
-認証が完了すると以下のようなモーダルが表示されますので、`potepancamp`を選択してください。
+認証が完了すると以下のようなモーダルが表示されますので、「Select Organization」で`potepancamp`を、「Select Repository」でご自身のリポジトリを選択し、「Set Up Project」ボタンをクリックしてください。
 
-![組織を選択する](https://res.cloudinary.com/he3zvdcui/image/upload/v1697594544/CircleCi/06_select_an_organization_gbdjvx.png)
+![組織を選択する](https://res.cloudinary.com/he3zvdcui/image/upload/v1701746787/CircleCi/06_select_an_organization_cpbmtt.png)
 
 サインアップ後、画面左上のドロップダウンメニューをクリックしてください。
 
@@ -46,16 +59,9 @@ CircleCIとの連携後、以下のようなフローで最終課題を提出す
 
 ![CircleCI ホーム画面](../images/CI/04_home.png)
 
-続いて、ご自身のリポジトリ（ここでは`potepan-dev`）をCIのビルド対象に追加するための設定を進めていきます。<br>
-画面中央にご自身のリポジトリ（ここでは`potepan-dev`）が表示されていると思いますので、その横の`Set Up Project`をクリックしてください。
-
-![CircleCI Set Up Project](../images/CI/05_setup-project.png)
-
-`config.yml`を追加するためのモーダルが表示されますが、`Fastest`のオプションで緑色のチェックマークが確認できれば、特に項目は変更せず、そのまま`Set Up Project`をクリックしてください。
-
-![CircleCI Select Your Config](../images/CI/06_select-config.png)
-
-設定が完了すると、以下のようにCircleCI上でCIが動き始めます。
+続いて、サイドバーの「Projects」メニューをクリックしてください。<br>
+ご自身のリポジトリ名のプロジェクトが表示されていると思いますので、そちらをクリックしてください。<br>
+設定が問題なく完了していると、以下のようにCircleCI上でCIが動き始めます。
 
 ![CircleCI Start Building](../images/CI/07_start-building.png)
 
