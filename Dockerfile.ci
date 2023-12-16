@@ -9,7 +9,7 @@ RUN apt-get update                                                              
   && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list                                      \
   && wget https://dev.mysql.com/get/mysql-apt-config_0.8.22-1_all.deb                                                                   \
   && DEBIAN_FRONTEND=noninteractive dpkg -i mysql-apt-config_0.8.22-1_all.deb                                                           \
-  && apt-get update                                                                                                                     \
+  && apt-get update --allow-insecure-repositories                                                                                                                   \
   && apt-get remove -y                                                                                                                  \
     libmariadbclient18                                                                                                                  \
     libmariadbclient-dev-compat                                                                                                         \
