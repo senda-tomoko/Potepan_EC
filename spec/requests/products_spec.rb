@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Products", type: :request do
-  include ApplicationHelper
-
   describe "GET /show" do
     let(:product) { create(:product) }
     let(:image) { create(:image) }
