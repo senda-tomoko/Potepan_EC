@@ -1,9 +1,8 @@
 <% content_for :title, @product.name %>
-
 <div class="container">
   <div class="row">
     <div class="col-md-5">
-      <%= image_tag url_for(@product.images.first.attachment), class: 'ProductSlider__image' %>
+      <%= image_tag url_for(@product.images.first.attachment), class: 'ItemImage' %>
     </div>
     <div class="col-md-7">
       <section class="productDetail">
@@ -33,7 +32,7 @@
   <div class="row mt-5">
     <section class="RelatedProducts">
       <h3 class="RelatedProducts__title">一緒に見られている商品</h3>
-      <ul class="RelatedProducts__list row list-unstyled">
+      <ul class="list-unstyled row d-flex flex-row">
         <% 4.times do %>
           <li class="RelatedProduct col-md-3">
             <img class="RelatedProduct__image" alt="服" src="/assets/home/category/cloth-73e38cba6f78260794185319feaf449113d108dac320665f27775d73e23abc99.jpg">
