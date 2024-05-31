@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Products", type: :request do
-  describe "GET /show" do
+  describe "GET /products/:id" do
     let(:product) { create(:product) }
     let(:image) { create(:image) }
 
