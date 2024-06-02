@@ -36,7 +36,6 @@ gem 'solidus', '~> 2.11.0'
 gem 'solidus_auth_devise'
 gem 'solidus_i18n', github: 'solidusio-contrib/solidus_i18n', branch: 'master'
 gem 'paypalhttp', '~> 1.0'
-gem 'solidus_auth_devise'
 gem 'solidus_paypal_commerce_platform'
 
 group :development, :test do
@@ -58,6 +57,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.1'
+  gem 'rubocop-airbnb'
+  gem 'rubocop', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

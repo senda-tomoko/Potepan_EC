@@ -1,0 +1,46 @@
+<% content_for :title, @product.name %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <%= image_tag url_for(@product.images.first.attachment), class: 'ItemImage' %>
+    </div>
+    <div class="col-md-7">
+      <section class="productDetail">
+        <h2 class="ProductDetail_name"><%= @product.name %></h2>
+        <div class="d-flex flex-row mb-3">
+          <% ['S', 'M', 'L', 'XL'].each do |size| %>
+            <button class="btn size-btn rounded-circle" type="button"><%= size %></button>
+          <% end %>
+        </div>
+        <div>
+          <p class="h1"><%= @product.display_price %></p>
+        </div>
+        <div class="d-flex align-items-center mb-3">
+          <label class="item-count">数量</label>
+          <div class="SubTotalForItem__select ProductDetail__item-count">
+            <select name="item-count" id="item-count">
+              <% (1..10).each do |i| %>
+                <option value="<%= i %>"><%= i %></option>
+              <% end %>
+            </select>
+          </div>
+        </div>
+        <a class="ProductDetail__add-button btn btn-primary">カートに入れる</a>
+      </section>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <section class="RelatedProducts">
+      <h3 class="RelatedProducts__title">一緒に見られている商品</h3>
+      <ul class="list-unstyled row d-flex flex-row">
+        <% 4.times do %>
+          <li class="RelatedProduct col-md-3">
+            <%= image_tag "home/category/cloth.jpg", class: "RelatedProduct__image", alt: "服" %>
+            <p class="RelatedProduct__name">ヒートテックウォームウォームパデットリブブルゾン</p>
+            <span class="RelatedProduct__price">¥ 5,999</span>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  </div>
+</div>
